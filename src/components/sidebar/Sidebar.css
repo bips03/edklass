@@ -1,0 +1,5 @@
+.side_bar{
+    background : red !important;
+    font-size : 1.2rem  !important;
+    overflow-y: scroll;
+}
