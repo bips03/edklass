@@ -1,5 +1,11 @@
-.side_bar{
-    background : red !important;
+.side{
+    width : 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #2A2D32;
     font-size : 1.2rem  !important;
-    overflow-y: scroll;
-}
+    overflow-y: scroll auto;
+    color : #fff
+    
+  }

@@ -1,11 +1,11 @@
-import {SET_USER} from './actiontype'
+import {SET_USER,SET_CHANNEL} from './actiontype'
 import { combineReducers } from 'redux'
 
-let defaultState = {
+let defaultUserState = {
     currentUser : null
 }
 
-const userReducer = (state = defaultState, action) => {
+const userReducer = (state = defaultUserState, action) => {
     if(action.type === SET_USER){
         let payload = action.payload
         state = {...payload}
@@ -14,5 +14,20 @@ const userReducer = (state = defaultState, action) => {
     return state;
 }
 
+let defaultChannelState = {
+    currentChannel: null
+}
 
-export const combinedReducers = combineReducers({ user : userReducer})
+
+const channelReducer = (state = defaultChannelState, action) => {
+    if (action.type === SET_CHANNEL) {
+        let payload = action.payload;
+        state = { ...payload };
+        state.loading= false;
+        return state;
+    }
+    return state;
+}
+
+
+export const combinedReducers = combineReducers({ user : userReducer , channel : channelReducer})

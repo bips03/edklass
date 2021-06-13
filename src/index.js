@@ -17,6 +17,8 @@ import { createStore } from "redux";
 import { combinedReducers } from "./store/reducer";
 import { setUser } from "./store/actioncreator";
 
+import "semantic-ui-css/semantic.min.css"
+
 const store = createStore(combinedReducers)
 
 const Index = (props) => {

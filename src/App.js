@@ -1,22 +1,19 @@
-import React from 'react';
-import './App.css';
-import  Sidebar from './components/sidebar/Sidebar'
-import { Grid} from 'semantic-ui-react'
-
-
+import React from "react";
+import "./App.css";
+import Sidebar from "./components/sidebar/Sidebar";
+import Bot from './components/sidebar/Bot'
 
 function App() {
   return (
-    <Grid columns="equal">
-    <Sidebar />
+    <div className = 'main'>
+        <Sidebar />
 
-    <Grid.Column width={3}>
-      <span>
-
-      </span>
-    </Grid.Column>
-  </Grid>
-  )
+        
+      <div className='right'>
+        <Bot />
+      </div>
+    </div>
+  );
 }
 
 export default App;

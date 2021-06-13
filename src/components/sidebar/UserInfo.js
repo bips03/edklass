@@ -1,17 +1,9 @@
 import { connect } from "react-redux";
-import { Grid, Header, Image, Dropdown } from "semantic-ui-react";
+import { Image} from "semantic-ui-react";
 import "./UserInfo.css";
 import firebase from "../../server/firebase";
 
 function UserInfo(props) {
-  const getDropDownOptions = () => {
-    return [
-      {
-        key: "signout",
-        text: <span onClick={signOut}>Sign Out</span>,
-      },
-    ];
-  };
 
   const signOut = () => {
     firebase
@@ -21,23 +13,11 @@ function UserInfo(props) {
   };
   if (props.user) {
     return (
-      <Grid>
-        <Grid.Column>
-          <Grid.Row className="userinfo_grid_row">
-            <Header className="userinfo_displayname" inverted as="h4">
-              <Dropdown
-                trigger={
-                  <span>
-                    <Image src={props.user.photoURL} avatar></Image>
+      <div className = 'userinfo'>
+                    <h2>Ed Klass </h2>
                     {props.user.displayName}
-                  </span>
-                }
-                options={getDropDownOptions()}
-              ></Dropdown>
-            </Header>
-          </Grid.Row>
-        </Grid.Column>
-      </Grid>
+                    <button className='button' onClick={signOut}> Sign out </button>
+        </div>
     );
   }
   return null;
